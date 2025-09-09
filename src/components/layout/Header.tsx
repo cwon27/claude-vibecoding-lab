@@ -22,13 +22,17 @@ export function Header() {
 
         {/* 우측 버튼들 */}
         <div className="flex items-center space-x-2">
-          <Button variant="outline" size="sm">
-            <User className="h-4 w-4 mr-1" />
-            로그인
-          </Button>
-          <Button size="sm" className="k-nomad-gradient text-white">
-            회원가입
-          </Button>
+          <Link href="/login">
+            <Button variant="outline" size="sm">
+              <User className="h-4 w-4 mr-1" />
+              로그인
+            </Button>
+          </Link>
+          <Link href="/register">
+            <Button size="sm" className="k-nomad-gradient text-white">
+              회원가입
+            </Button>
+          </Link>
         </div>
       </div>
 

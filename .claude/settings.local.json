@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(del \"E:\\k-nomad\\src\\components\\sections\\PricingSection.tsx\")"
+      "Bash(del \"E:\\k-nomad\\src\\components\\sections\\PricingSection.tsx\")",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
