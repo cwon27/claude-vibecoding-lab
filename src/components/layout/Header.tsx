@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Navigation } from './Navigation';
 import { Home, User } from 'lucide-react';
 
 export function Header() {
@@ -14,11 +13,6 @@ export function Header() {
             <span className="text-2xl font-bold k-nomad-text-gradient font-english">K-NOMAD</span>
           </div>
         </Link>
-
-        {/* 데스크톱 네비게이션 */}
-        <div className="hidden md:flex">
-          <Navigation />
-        </div>
 
         {/* 우측 버튼들 */}
         <div className="flex items-center space-x-2">
@@ -34,11 +28,6 @@ export function Header() {
             </Button>
           </Link>
         </div>
-      </div>
-
-      {/* 모바일 네비게이션 */}
-      <div className="block md:hidden border-t px-4 py-2">
-        <Navigation isMobile />
       </div>
     </header>
   );

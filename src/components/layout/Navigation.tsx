@@ -1,33 +1,8 @@
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Map, BarChart3, MessageSquare, Edit } from 'lucide-react';
 
 interface NavigationProps {
   isMobile?: boolean;
 }
-
-const navigationItems = [
-  {
-    href: '/cities',
-    label: '도시탐색',
-    icon: Map,
-  },
-  {
-    href: '/compare',
-    label: '비교하기',
-    icon: BarChart3,
-  },
-  {
-    href: '/community',
-    label: '커뮤니티',
-    icon: MessageSquare,
-  },
-  {
-    href: '/review',
-    label: '리뷰작성',
-    icon: Edit,
-  },
-];
 
 export function Navigation({ isMobile = false }: NavigationProps) {
   return (
@@ -37,21 +12,7 @@ export function Navigation({ isMobile = false }: NavigationProps) {
         isMobile ? 'flex-wrap gap-2' : 'space-x-6'
       )}
     >
-      {navigationItems.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className={cn(
-            'flex items-center transition-colors hover:text-foreground/80',
-            isMobile
-              ? 'flex-col space-y-1 text-xs'
-              : 'space-x-2 text-sm font-medium'
-          )}
-        >
-          <item.icon className={cn('h-4 w-4', isMobile && 'h-5 w-5')} />
-          <span>{item.label}</span>
-        </Link>
-      ))}
+      {/* 네비게이션 항목들이 제거됨 - 홈페이지와 인증 기능만 유지 */}
     </nav>
   );
 }
