@@ -15,6 +15,10 @@ export interface City {
   foreignerFriendly: number;
   cafeCount: number;
   coworkingSpaces: number;
+  likes: number;
+  dislikes: number;
+  environment: '자연친화' | '도심천호' | '카페작업' | '코워킹 필수';
+  bestSeason: '봄' | '여름' | '가을' | '겨울';
   livingCost: {
     accommodation: number;
     food: number;
@@ -85,9 +89,10 @@ export interface Testimonial {
 
 // 필터 타입
 export interface FilterOptions {
-  budget: 'all' | 'low' | 'medium' | 'high';
-  region: 'all' | 'seoul' | 'yeongnam' | 'honam' | 'gangwon' | 'jeju';
-  purpose: 'all' | 'business' | 'leisure' | 'education' | 'culture';
+  budget: '전체' | '100만원' | '100~200만원' | '200만원';
+  region: '전체' | '수도권' | '경상도' | '전라도' | '강원도' | '제주도' | '충청도';
+  environment: '전체' | '자연친화' | '도심천호' | '카페작업' | '코워킹 필수';
+  bestSeason: '전체' | '봄' | '여름' | '가을' | '겨울';
 }
 
 // 검색 타입

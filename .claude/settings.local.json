@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(del \"E:\\k-nomad\\src\\components\\sections\\PricingSection.tsx\")",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run lint)",
+      "Bash(npx eslint:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run lint:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []

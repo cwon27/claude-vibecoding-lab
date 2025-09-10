@@ -17,6 +17,10 @@ export const popularCities: City[] = [
     foreignerFriendly: 4.3,
     cafeCount: 450,
     coworkingSpaces: 25,
+    likes: 241,
+    dislikes: 46,
+    environment: '코워킹 필수',
+    bestSeason: '봄',
     livingCost: {
       accommodation: 1200000,
       food: 400000,
@@ -27,7 +31,7 @@ export const popularCities: City[] = [
   {
     id: '2',
     name: '부산 해운대',
-    region: '영남권',
+    region: '경상도',
     image: '/images/haeundae.jpg',
     rating: 4.0,
     reviewCount: 198,
@@ -39,6 +43,10 @@ export const popularCities: City[] = [
     foreignerFriendly: 3.8,
     cafeCount: 220,
     coworkingSpaces: 12,
+    likes: 158,
+    dislikes: 40,
+    environment: '자연친화',
+    bestSeason: '여름',
     livingCost: {
       accommodation: 800000,
       food: 250000,
@@ -49,7 +57,7 @@ export const popularCities: City[] = [
   {
     id: '3',
     name: '제주 제주시',
-    region: '제주권',
+    region: '제주도',
     image: '/images/jeju.jpg',
     rating: 4.5,
     reviewCount: 342,
@@ -61,6 +69,10 @@ export const popularCities: City[] = [
     foreignerFriendly: 4.0,
     cafeCount: 180,
     coworkingSpaces: 8,
+    likes: 307,
+    dislikes: 35,
+    environment: '자연친화',
+    bestSeason: '가을',
     livingCost: {
       accommodation: 900000,
       food: 300000,
@@ -83,6 +95,10 @@ export const popularCities: City[] = [
     foreignerFriendly: 4.1,
     cafeCount: 320,
     coworkingSpaces: 18,
+    likes: 134,
+    dislikes: 22,
+    environment: '카페작업',
+    bestSeason: '봄',
     livingCost: {
       accommodation: 1000000,
       food: 350000,
@@ -105,6 +121,10 @@ export const popularCities: City[] = [
     foreignerFriendly: 4.2,
     cafeCount: 280,
     coworkingSpaces: 15,
+    likes: 174,
+    dislikes: 49,
+    environment: '도심천호',
+    bestSeason: '가을',
     livingCost: {
       accommodation: 950000,
       food: 300000,
@@ -115,7 +135,7 @@ export const popularCities: City[] = [
   {
     id: '6',
     name: '경주 황리단길',
-    region: '영남권',
+    region: '경상도',
     image: '/images/gyeongju.jpg',
     rating: 3.7,
     reviewCount: 89,
@@ -127,6 +147,10 @@ export const popularCities: City[] = [
     foreignerFriendly: 3.2,
     cafeCount: 95,
     coworkingSpaces: 4,
+    likes: 65,
+    dislikes: 24,
+    environment: '자연친화',
+    bestSeason: '봄',
     livingCost: {
       accommodation: 500000,
       food: 180000,

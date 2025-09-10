@@ -16,33 +16,43 @@ export function SearchFilter({ onFilterChange, onSearch }: SearchFilterProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [filters, setFilters] = useState<FilterOptions>({
-    budget: 'all',
-    region: 'all',
-    purpose: 'all',
+    budget: '전체',
+    region: '전체',
+    environment: '전체',
+    bestSeason: '전체',
   });
 
   const budgetOptions = [
-    { value: 'low', label: '💸₩100만↓' },
-    { value: 'medium', label: '💰₩100-200만' },
-    { value: 'high', label: '💎₩200만↑' },
-    { value: 'all', label: '전체' },
+    { value: '전체', label: '전체' },
+    { value: '100만원', label: '💸 100만원 이하' },
+    { value: '100~200만원', label: '💰 100~200만원' },
+    { value: '200만원', label: '💎 200만원 이상' },
   ];
 
   const regionOptions = [
-    { value: 'seoul', label: '수도권' },
-    { value: 'yeongnam', label: '영남권' },
-    { value: 'honam', label: '호남권' },
-    { value: 'gangwon', label: '강원권' },
-    { value: 'jeju', label: '제주권' },
-    { value: 'all', label: '전체' },
+    { value: '전체', label: '전체' },
+    { value: '수도권', label: '🏙️ 수도권' },
+    { value: '경상도', label: '🌊 경상도' },
+    { value: '전라도', label: '🌾 전라도' },
+    { value: '강원도', label: '⛰️ 강원도' },
+    { value: '제주도', label: '🌴 제주도' },
+    { value: '충청도', label: '🏞️ 충청도' },
   ];
 
-  const purposeOptions = [
-    { value: 'business', label: '💼비즈니스' },
-    { value: 'leisure', label: '🏖️휴양' },
-    { value: 'education', label: '🎓학습' },
-    { value: 'culture', label: '🎭문화' },
-    { value: 'all', label: '전체' },
+  const environmentOptions = [
+    { value: '전체', label: '전체' },
+    { value: '자연친화', label: '🌿 자연친화' },
+    { value: '도심천호', label: '🏢 도심천호' },
+    { value: '카페작업', label: '☕ 카페작업' },
+    { value: '코워킹 필수', label: '💼 코워킹 필수' },
+  ];
+
+  const bestSeasonOptions = [
+    { value: '전체', label: '전체' },
+    { value: '봄', label: '🌸 봄' },
+    { value: '여름', label: '☀️ 여름' },
+    { value: '가을', label: '🍂 가을' },
+    { value: '겨울', label: '❄️ 겨울' },
   ];
 
   const handleFilterChange = (
@@ -59,7 +69,7 @@ export function SearchFilter({ onFilterChange, onSearch }: SearchFilterProps) {
   };
 
   const getActiveFiltersCount = () => {
-    return Object.values(filters).filter(value => value !== 'all').length;
+    return Object.values(filters).filter(value => value !== '전체').length;
   };
 
   return (
@@ -97,30 +107,39 @@ export function SearchFilter({ onFilterChange, onSearch }: SearchFilterProps) {
       {/* 활성 필터 표시 */}
       {getActiveFiltersCount() > 0 && (
         <div className="flex flex-wrap gap-2 mb-4">
-          {filters.budget !== 'all' && (
+          {filters.budget !== '전체' && (
             <Badge variant="secondary" className="flex items-center gap-1">
               예산: {budgetOptions.find(opt => opt.value === filters.budget)?.label}
               <X
                 className="h-3 w-3 cursor-pointer"
-                onClick={() => handleFilterChange('budget', 'all')}
+                onClick={() => handleFilterChange('budget', '전체')}
               />
             </Badge>
           )}
-          {filters.region !== 'all' && (
+          {filters.region !== '전체' && (
             <Badge variant="secondary" className="flex items-center gap-1">
               지역: {regionOptions.find(opt => opt.value === filters.region)?.label}
               <X
                 className="h-3 w-3 cursor-pointer"
-                onClick={() => handleFilterChange('region', 'all')}
+                onClick={() => handleFilterChange('region', '전체')}
               />
             </Badge>
           )}
-          {filters.purpose !== 'all' && (
+          {filters.environment !== '전체' && (
             <Badge variant="secondary" className="flex items-center gap-1">
-              목적: {purposeOptions.find(opt => opt.value === filters.purpose)?.label}
+              환경: {environmentOptions.find(opt => opt.value === filters.environment)?.label}
               <X
                 className="h-3 w-3 cursor-pointer"
-                onClick={() => handleFilterChange('purpose', 'all')}
+                onClick={() => handleFilterChange('environment', '전체')}
+              />
+            </Badge>
+          )}
+          {filters.bestSeason !== '전체' && (
+            <Badge variant="secondary" className="flex items-center gap-1">
+              계절: {bestSeasonOptions.find(opt => opt.value === filters.bestSeason)?.label}
+              <X
+                className="h-3 w-3 cursor-pointer"
+                onClick={() => handleFilterChange('bestSeason', '전체')}
               />
             </Badge>
           )}
@@ -164,16 +183,33 @@ export function SearchFilter({ onFilterChange, onSearch }: SearchFilterProps) {
             </div>
           </div>
 
-          {/* 목적 필터 */}
+          {/* 환경 필터 */}
           <div>
-            <p className="font-medium mb-3">🎯 목적</p>
+            <p className="font-medium mb-3">🌿 환경</p>
             <div className="flex flex-wrap gap-2">
-              {purposeOptions.map((option) => (
+              {environmentOptions.map((option) => (
                 <Button
                   key={option.value}
-                  variant={filters.purpose === option.value ? 'default' : 'outline'}
+                  variant={filters.environment === option.value ? 'default' : 'outline'}
                   size="sm"
-                  onClick={() => handleFilterChange('purpose', option.value)}
+                  onClick={() => handleFilterChange('environment', option.value)}
+                >
+                  {option.label}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* 최고 계절 필터 */}
+          <div>
+            <p className="font-medium mb-3">🌸 최고 계절</p>
+            <div className="flex flex-wrap gap-2">
+              {bestSeasonOptions.map((option) => (
+                <Button
+                  key={option.value}
+                  variant={filters.bestSeason === option.value ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => handleFilterChange('bestSeason', option.value)}
                 >
                   {option.label}
                 </Button>
@@ -187,9 +223,10 @@ export function SearchFilter({ onFilterChange, onSearch }: SearchFilterProps) {
               variant="outline"
               onClick={() => {
                 const resetFilters: FilterOptions = {
-                  budget: 'all',
-                  region: 'all',
-                  purpose: 'all',
+                  budget: '전체',
+                  region: '전체',
+                  environment: '전체',
+                  bestSeason: '전체',
                 };
                 setFilters(resetFilters);
                 onFilterChange?.(resetFilters);

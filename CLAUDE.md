@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 K-NOMAD is a Korean digital nomad lifestyle platform built with Next.js 15.5.2, React 19, and Supabase. The application helps digital nomads find suitable cities in Korea by providing information about living costs, internet speeds, and community resources in both Korean and English.
 
+## Language & Communication
+- 답변과 추론과정은 항상 한국어로 작성해주세요.
+- 검증 과정이나 테스트 용도로 3000포트 서버를 작동한 경우 마지막에 항상 3000포트 서비스 중지
+
 ## Development Commands
 
 ```bash

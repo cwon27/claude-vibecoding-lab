@@ -41,7 +41,7 @@ export function HeroSection() {
               </div>
 
               {/* 필터 셀렉트 박스들 */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {/* 예산 필터 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">💰 예산</label>
@@ -50,10 +50,10 @@ export function HeroSection() {
                       <SelectValue placeholder="예산 선택" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="low">💸₩100만↓</SelectItem>
-                      <SelectItem value="medium">💰₩100-200만</SelectItem>
-                      <SelectItem value="high">💎₩200만↑</SelectItem>
-                      <SelectItem value="all">전체</SelectItem>
+                      <SelectItem value="전체">전체</SelectItem>
+                      <SelectItem value="100만원">💸 100만원 이하</SelectItem>
+                      <SelectItem value="100~200만원">💰 100~200만원</SelectItem>
+                      <SelectItem value="200만원">💎 200만원 이상</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -66,29 +66,47 @@ export function HeroSection() {
                       <SelectValue placeholder="지역 선택" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="capital">수도권</SelectItem>
-                      <SelectItem value="yeongnam">영남권</SelectItem>
-                      <SelectItem value="honam">호남권</SelectItem>
-                      <SelectItem value="gangwon">강원권</SelectItem>
-                      <SelectItem value="jeju">제주권</SelectItem>
-                      <SelectItem value="all">전체</SelectItem>
+                      <SelectItem value="전체">전체</SelectItem>
+                      <SelectItem value="수도권">🏙️ 수도권</SelectItem>
+                      <SelectItem value="경상도">🌊 경상도</SelectItem>
+                      <SelectItem value="전라도">🌾 전라도</SelectItem>
+                      <SelectItem value="강원도">⛰️ 강원도</SelectItem>
+                      <SelectItem value="제주도">🌴 제주도</SelectItem>
+                      <SelectItem value="충청도">🏞️ 충청도</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
-                {/* 목적 필터 */}
+                {/* 환경 필터 */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">🎯 목적</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">🌿 환경</label>
                   <Select>
                     <SelectTrigger className="h-10">
-                      <SelectValue placeholder="목적 선택" />
+                      <SelectValue placeholder="환경 선택" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="business">💼 비즈니스</SelectItem>
-                      <SelectItem value="leisure">🏖️ 휴양</SelectItem>
-                      <SelectItem value="study">🎓 학습</SelectItem>
-                      <SelectItem value="culture">🎭 문화</SelectItem>
-                      <SelectItem value="all">전체</SelectItem>
+                      <SelectItem value="전체">전체</SelectItem>
+                      <SelectItem value="자연친화">🌿 자연친화</SelectItem>
+                      <SelectItem value="도심천호">🏢 도심천호</SelectItem>
+                      <SelectItem value="카페작업">☕ 카페작업</SelectItem>
+                      <SelectItem value="코워킹 필수">💼 코워킹 필수</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* 최고 계절 필터 */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">🌸 최고 계절</label>
+                  <Select>
+                    <SelectTrigger className="h-10">
+                      <SelectValue placeholder="계절 선택" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="전체">전체</SelectItem>
+                      <SelectItem value="봄">🌸 봄</SelectItem>
+                      <SelectItem value="여름">☀️ 여름</SelectItem>
+                      <SelectItem value="가을">🍂 가을</SelectItem>
+                      <SelectItem value="겨울">❄️ 겨울</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
